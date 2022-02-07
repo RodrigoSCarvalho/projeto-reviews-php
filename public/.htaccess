@@ -1,0 +1,15 @@
+#Garantir que ao acessar publico o arquivo a ser executado será index.php
+# habilita modo de reescrita do apache
+RewriteEngine On
+
+# condições: o redirecionamento não serão aplicadas para determinados acessos
+# por exemplo: imagens, arquivos css, diretórios
+
+# não se aplica aos arquivos !-f
+RewriteCond %{REQUEST_FILENAME} !-f
+
+# não se aplica aos diretórios
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# regra: todas as requisiçoes para a aplicação serão redicionada para index.php
+RewriteRule ^(.*)$ index.php

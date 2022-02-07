@@ -1,0 +1,56 @@
+body {
+    background-image: url(http://review.com/images/diretor.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.linked {
+    color: #fff;
+}
+
+.tabela {
+    background-color: rgba(30, 30, 30, 0.7);
+    vertical-align: middle;
+}
+
+.tabela tbody tr:hover {
+    color: #FFC107;
+}
+
+.table-curved {
+    border-radius: 6px;
+    border-left: 0px;
+}
+
+.table-curved th {
+    border-top: none;
+}
+
+.table-curved th:first-child {
+    border-radius: 6px 0 0 0;
+}
+
+.table-curved th:last-child {
+    border-radius: 0 6px 0 0;
+}
+
+.table-curved th:only-child {
+    border-radius: 6px 6px 0 0;
+}
+
+.table-curved tr:last-child {
+    border-radius: 0 0 0 6px;
+}
+
+.table-curved tr:last-child {
+    border-radius: 0 0 6px 0;
+}
+
+.tabela tbody tr:hover .autor_foto{
+    border: 1px solid #FFC107;
+}
+
+.sombra {
+     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,32 @@
+body {
+    background-image: url(http://review.com/images/home.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#apresentacao {
+    font-family: Nunito;
+    line-height: 115%;
+    /* or 55px */
+
+    color: #FFFFFF;
+
+    text-shadow: 2px 4px 5px rgba(0, 0, 0, 0.2);
+}
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.dot {
+    height: 100%;
+    width: auto;
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+}
