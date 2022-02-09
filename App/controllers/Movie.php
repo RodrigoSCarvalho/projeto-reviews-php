@@ -34,7 +34,7 @@ class Movie extends BaseController
             $total_paginas = ceil($total_registros / 2);
 
             // obtém os registros referente a página
-            $lista_filmes = $filmeModel->getRegistroPagina($offset, 3)->fetchAll(\PDO::FETCH_ASSOC);
+            $lista_filmes = $filmeModel->getRegistroPagina($offset, 2)->fetchAll(\PDO::FETCH_ASSOC);
 
             $data = ["TotalRegistros" => $total_registros, "TotalPaginas" => $total_paginas, "Filmes" => $lista_filmes];
 

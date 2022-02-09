@@ -47,7 +47,6 @@
                             <th>#</th>
                             <th>Foto</th>
                             <th>Nome</th>
-                            <th>Sobrenome</th>
                             <th>Nacionalidade</th>
                         </tr>
                     </thead>
@@ -61,7 +60,6 @@
                                 echo "<td>" . htmlentities($diretor['id'], ENT_QUOTES, 'UTF-8') . "</td>";
                                 echo "<td><img class='diretor_foto' src='" . htmlentities(utf8_encode($diretor['imagem'])) . "' width='128' height='128' alt='Foto do Diretor'> </img></td>";
                                 echo "<td>" . htmlentities(utf8_encode($diretor['nome'])) . "</td>";
-                                echo "<td>" . htmlentities(utf8_encode($diretor['sobrenome'])) . "</td>";
                                 echo "<td>" . htmlentities(utf8_encode($diretor['nacionalidade'])) . "</td>";
                                 echo "</tr>";
                             }

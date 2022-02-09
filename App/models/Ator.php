@@ -4,13 +4,12 @@ namespace App\models;
 
 class Ator
 {
-    private $id, $nome, $sobrenome, $nacionalidade, $imagem;
+    private $id, $nome, $nacionalidade, $imagem;
 
     public function __construct()
     {
         $this->id = 0;
         $this->nome = "";
-        $this->sobrenome= "";
         $this->nacionalidade= "";
         $this->imagem= "";
     }
@@ -51,26 +50,6 @@ class Ator
     public function setNome($nome)
     {
         $this->nome = $nome;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of sobrenome
-     */ 
-    public function getSobrenome()
-    {
-        return $this->sobrenome;
-    }
-
-    /**
-     * Set the value of sobrenome
-     *
-     * @return  self
-     */ 
-    public function setSobrenome($sobrenome)
-    {
-        $this->sobrenome = $sobrenome;
 
         return $this;
     }

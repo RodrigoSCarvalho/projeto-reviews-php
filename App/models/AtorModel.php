@@ -8,14 +8,13 @@ class AtorModel extends BaseModel
     public function create($ator)
     {
         try { // conexão com a base de dados
-            $sql = "INSERT INTO ator(nome, sobrenome, nacionalidade, imagem) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO ator(nome, nacionalidade, imagem) VALUES (?,?,?)";
             $conn = AtorModel::getConexao();
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $ator->getNome());
-            $stmt->bindValue(2, $ator->getSobrenome());
-            $stmt->bindValue(3, $ator->getNacionalidade());
-            $stmt->bindValue(4, $ator->getImagem());
+            $stmt->bindValue(2, $ator->getNacionalidade());
+            $stmt->bindValue(3, $ator->getImagem());
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query falhou: ' . $e->getMessage());
@@ -53,15 +52,14 @@ class AtorModel extends BaseModel
     public function update($ator)
     {
         try {
-            $sql = "UPDATE ator SET nome = ?, sobrenome = ?, nacionalidade = ?, imagem = ? WHERE id = ?";
+            $sql = "UPDATE ator SET nome = ?, nacionalidade = ?, imagem = ? WHERE id = ?";
             $conn = AtorModel::getConexao();
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $ator->getNome());
-            $stmt->bindValue(2, $ator->getSobrenome());
-            $stmt->bindValue(3, $ator->getNacionalidade());
-            $stmt->bindValue(4, $ator->getImagem());
-            $stmt->bindValue(5, $ator->getId());
+            $stmt->bindValue(2, $ator->getNacionalidade());
+            $stmt->bindValue(3, $ator->getImagem());
+            $stmt->bindValue(4, $ator->getId());
             $stmt->execute();
             $conn = null;
         } catch (PDOException $e) {

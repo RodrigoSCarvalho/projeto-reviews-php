@@ -8,14 +8,13 @@ class DiretorModel extends BaseModel
     public function create($diretor)
     {
         try { // conexão com a base de dados
-            $sql = "INSERT INTO diretor(nome, sobrenome, nacionalidade, imagem) VALUES (?,?,?,?)";
+            $sql = "INSERT INTO diretor(nome, nacionalidade, imagem) VALUES (?,?,?)";
             $conn = DiretorModel::getConexao();
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $diretor->getNome());
-            $stmt->bindValue(2, $diretor->getSobrenome());
-            $stmt->bindValue(3, $diretor->getNacionalidade());
-            $stmt->bindValue(4, $diretor->getImagem());
+            $stmt->bindValue(2, $diretor->getNacionalidade());
+            $stmt->bindValue(3, $diretor->getImagem());
             $stmt->execute();
         } catch (PDOException $e) {
             die('Query falhou: ' . $e->getMessage());
@@ -53,15 +52,14 @@ class DiretorModel extends BaseModel
     public function update($diretor)
     {
         try {
-            $sql = "UPDATE diretor SET nome = ?, sobrenome = ?, nacionalidade = ?, imagem = ? WHERE id = ?";
+            $sql = "UPDATE diretor SET nome = ?, nacionalidade = ?, imagem = ? WHERE id = ?";
             $conn = DiretorModel::getConexao();
 
             $stmt = $conn->prepare($sql);
             $stmt->bindValue(1, $diretor->getNome());
-            $stmt->bindValue(2, $diretor->getSobrenome());
-            $stmt->bindValue(3, $diretor->getNacionalidade());
-            $stmt->bindValue(4, $diretor->getImagem());
-            $stmt->bindValue(5, $diretor->getId());
+            $stmt->bindValue(2, $diretor->getNacionalidade());
+            $stmt->bindValue(3, $diretor->getImagem());
+            $stmt->bindValue(4, $diretor->getId());
             $stmt->execute();
             $conn = null;
         } catch (PDOException $e) {

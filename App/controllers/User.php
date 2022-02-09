@@ -117,7 +117,8 @@ class User extends BaseController
 
                 $usuarioModel->create($usuario);
                 // calcular o hash da chave gerada
-
+                
+                Funcoes::redirect("AcessoRestrito/login");
                 echo ("<script>console.log('Cheguei em gravar');</script>");
                 //Funcoes::redirect("AcessoRestrito/login");
             else :

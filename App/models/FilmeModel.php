@@ -104,7 +104,7 @@ class FilmeModel extends BaseModel
     public function getRegistroPagina($offset, $numRegistrosPag)
     {
         try {
-            $sql = "SELECT * FROM FILME LIMIT ?,?";
+            $sql = "SELECT f.*, d.nome FROM diretor d, filme f where f.diretor_id = d.id LIMIT ?,?";
             $conn = FilmeModel::getConexao();
             $stmt = $conn->prepare($sql);
             $stmt->bindParam(1, $offset, PDO::PARAM_INT);

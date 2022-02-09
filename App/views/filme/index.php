@@ -66,7 +66,7 @@
                                 echo "<td class='fw-light' style='width: 40%'>" . htmlentities(utf8_encode($filme['descricao'])) . "</td>";
                                 echo "<td>" . htmlentities(utf8_encode($filme['ano'])) . "</td>";
                                 echo "<td>" . htmlentities(utf8_encode($filme['duracao'])) . "</td>";
-                                echo "<td>" . htmlentities(utf8_encode($filme['diretor_id'])) . "</td>";
+                                echo "<td>" . htmlentities(utf8_encode($filme['nome'])) . "</td>";
                                 echo "</tr>";
                             }
                         else :
