@@ -2,7 +2,7 @@
 
 namespace App\models;
 
-class Usuario
+class Genero
 {
     private $id, $genero;
 

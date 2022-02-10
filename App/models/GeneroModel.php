@@ -66,7 +66,7 @@ class GeneroModel extends BaseModel
     public function delete($Id)
     {
         try {
-            $sql = "DELETE FROM usuario WHERE id = ?";
+            $sql = "DELETE FROM genero WHERE id = ?";
             $conn = GeneroModel::getConexao();
 
             $stmt = $conn->prepare($sql);

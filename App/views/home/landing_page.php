@@ -20,7 +20,7 @@
 <body>
     <div class="container">
     <?php require_once '../App/views/navbar.php' ?>
-
+        <p class="text-danger">Página em construção, utilize os menus da navbar para navegar pela tabelas.</p>
 
 </body>
 <?php require_once '../App/views/footer.php' ?>

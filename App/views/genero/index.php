@@ -34,10 +34,13 @@
         $TotalPaginas = $data['TotalPaginas'];
         $lista_generos = $data['Generos'];
 
+        $urlAlterar = "http://review.com/Genre/alterar/";
+        $urlExcluir = "http://review.com/Genre/excluir/";
+        $urlIncluir = "http://review.com/Genre/incluir/";
         ?>
         <div class="row text-center">
             <div class="col">
-                <p class="text-warning display-4">Gêneros</p>
+                <p class="text-warning sombra display-4">Gêneros</p>
             </div>
         </div>
         <div class="row d-flex mt-5">
@@ -47,6 +50,7 @@
                         <tr>
                             <th>#</th>
                             <th>Gênero</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -58,6 +62,8 @@
                                 echo "<tr>";
                                 echo "<td>" . htmlentities($genero['id'], ENT_QUOTES, 'UTF-8') . "</td>";
                                 echo "<td>" . htmlentities(utf8_encode($genero['genero'])) . "</td>";
+                                echo "<td style='width: 10%'><a href='" . $urlAlterar . $genero['id'] . "'>edit</a></td>";
+                                echo "<td style='width: 10%'><a href='" . $urlExcluir . $genero['id'] . "'>excluir</a></td>";
                                 echo "</tr>";
                             }
                         else :
@@ -82,6 +88,11 @@
                     </nav>
                 <?php endif; ?>
             </div>
+        </div>
+        <div class="row d-flex text-center">
+            <div class="col">
+        <a href="<?=$urlIncluir?>" class="btn btn-dark mb-1">Cadastrar</a>
+        </div>
         </div>
     </div>
 

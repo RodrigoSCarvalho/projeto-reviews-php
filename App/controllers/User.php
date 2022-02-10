@@ -24,9 +24,6 @@ class User extends BaseController
     function __construct()
     {
         session_start();
-        //if (!Funcoes::usuarioLogado()) :
-        //Funcoes::redirect("Home");
-        //endif;
     }
 
     public function index($numPag = 1)
@@ -116,28 +113,20 @@ class User extends BaseController
                 $usuarioModel = $this->model("UsuarioModel");
 
                 $usuarioModel->create($usuario);
-                // calcular o hash da chave gerada
                 
                 Funcoes::redirect("AcessoRestrito/login");
-                echo ("<script>console.log('Cheguei em gravar');</script>");
-                //Funcoes::redirect("AcessoRestrito/login");
             else :
 
                 echo ("<script>console.log('Erro');</script>");
 
                 $erros = $validacao->get_errors_array();
-                //$_SESSION['CSRF_token'] = Funcoes::gerarTokenCSRF();
+                $_SESSION['CSRF_token'] = Funcoes::gerarTokenCSRF();
                 $data = ['erros' => $erros];
-                //$this->view('usuario/cadastrar', $data);
+                $this->view('usuario/cadastrar', $data);
                 
             endif;
         else :
-            echo ("<script>console.log('Erro');</script>");
-        //    die("Erro 404");
-        //endif;
-
-        //else :
-        //    Funcoes::redirect("Home");
+            die("Erro 404");
         endif;
     }
 
