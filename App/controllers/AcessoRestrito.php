@@ -55,21 +55,8 @@ class AcessoRestrito extends BaseController
 
                 $senha_enviada = $_POST['senha'];
 
-                // gera uma senha fake
-                //$senha_fake   = random_bytes(64);
-                //$hash_senha_fake = password_hash($senha_fake, PASSWORD_ARGON2I);
-
-                // busca o usuario
                 $usuarioModel = $this->model('UsuarioModel');
                 $usuario = $usuarioModel->getUsuarioEmail($_POST['email'], $_POST['senha']);
-
-                /*
-                    if (!empty($usuario)) :
-                        $senha_hash = $usuario['senha']; // achou o usuário usa hash do banco
-                    else :
-                        $senha_hash = $hash_senha_fake;  // não achou o usuário usa hash fake
-                    endif;
-                    */
 
                 if (!empty($usuario)) :
                     $_SESSION['id'] = $usuario['id'];
@@ -77,7 +64,7 @@ class AcessoRestrito extends BaseController
                     $_SESSION['emailUsuario'] = $usuario['email'];
 
                     Funcoes::redirect("Client");
-
+                
                 else :
                     $mensagem = ["Usuário e/ou Senha incorreta"];
                     $_SESSION['CAPTCHA_CODE'] = Funcoes::gerarCaptcha(); // guarda o captcha_code na sessão 
@@ -88,7 +75,7 @@ class AcessoRestrito extends BaseController
                         'mensagens' => $mensagem
                     ];
 
-                    $this->view('AcessoRestrito/login', $data);
+                    $this->view('login/login', $data);
                 endif;
 
             //else :  // falha CSRF_token"
@@ -104,12 +91,13 @@ class AcessoRestrito extends BaseController
                     'mensagens' => $mensagem
                 ];
 
-                $this->view('AcessoRestrito/login', $data);
+                $this->view('login/login', $data);
             endif;
         else : // não POST
             Funcoes::redirect();
         endif;
     }
+    
 
     public function logout()
     {
