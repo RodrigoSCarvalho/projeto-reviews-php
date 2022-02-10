@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="http://review.com/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://review.com/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="http://review.com/images/icon.svg">
     <title>Reviews e Recomendações</title>
 </head>
 <body>
